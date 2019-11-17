@@ -88,7 +88,7 @@ mappingSpec =
     Right (Mapping [(Key "key1", LitStr "value1"), (Key "key2", LitNum 987)])
 
   it "should parse (key: sequence) pair" $
-    withText mapping "key:\n  - value1\n  - 111\n - 2aa\n" `shouldBe`
+    withText mapping "key:\n  - value1\n  - 111\n  - 2aa\n" `shouldBe`
     Right (Mapping [(Key "key", Sequence [LitStr "value1", LitNum 111, LitStr "2aa"])])
 
 sequenceSpec :: Spec
